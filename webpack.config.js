@@ -32,5 +32,10 @@ module.exports = {
         to: path.join(__dirname, 'dist/bootstrap.min.css')
       }
     ])
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 3000
+  }
 };

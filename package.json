@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/FlowerEatFish/project.worldwide-news.git"
   },
+  "scripts": {
+    "build": "webpack",
+    "start:dev": "webpack-dev-server"
+  },
   "keywords": [
     "react",
     "typescript"
@@ -36,6 +40,7 @@
   "devDependencies": {
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.2.1"
+    "typescript": "^3.2.1",
+    "webpack-dev-server": "^3.1.10"
   }
 }
