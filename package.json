@@ -1,0 +1,38 @@
+{
+  "name": "project.worldwide-news",
+  "version": "0.0.0",
+  "description": "A porject to fetch and show worldwide news",
+  "main": "./src/index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlowerEatFish/project.worldwide-news.git"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "author": "Eating-Fish Flower",
+  "bugs": {
+    "url": "https://github.com/FlowerEatFish/project.worldwide-news/issues"
+  },
+  "homepage": "https://github.com/FlowerEatFish/project.worldwide-news#readme",
+  "dependencies": {
+    "@types/react": "^16.7.11",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^6.0.10",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.3.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.1"
+  }
+}
