@@ -1,4 +1,6 @@
 # This project
+dist/*.js
+dist/*.map
 package-lock.json
 
 # Logs
