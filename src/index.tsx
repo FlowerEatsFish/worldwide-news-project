@@ -21,7 +21,7 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <div className='master'>
+    <div className='container'>
       <Pagination />
       <Content />
       <Pagination />

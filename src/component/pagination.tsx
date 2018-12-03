@@ -20,7 +20,7 @@ class Pagination extends React.Component<IProps, {}> {
     const { currentPage, maxPage } = this.props;
 
     return (
-      <div className='pagination'>
+      <ul className='pagination' style={{ marginTop: '1rem' }}>
         <PaginationButton pageGoto={currentPage - 1} isDisabled={currentPage - 1 <= 0} text={'Prev'} />
         <PaginationNumber pageGoto={currentPage - 3} isDisabled={currentPage - 3 <= 0} />
         <PaginationNumber pageGoto={currentPage - 2} isDisabled={currentPage - 2 <= 0} />
@@ -30,7 +30,7 @@ class Pagination extends React.Component<IProps, {}> {
         <PaginationNumber pageGoto={currentPage + 2} isDisabled={currentPage + 2 > maxPage} />
         <PaginationNumber pageGoto={currentPage + 3} isDisabled={currentPage + 3 > maxPage} />
         <PaginationButton pageGoto={currentPage + 1} isDisabled={currentPage + 1 > maxPage} text={'Next'} />
-      </div>
+      </ul>
     )
   }
 }

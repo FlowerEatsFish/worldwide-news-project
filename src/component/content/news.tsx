@@ -15,19 +15,17 @@ class News extends React.Component<IProps, {}> {
     const { title, author, description, url, publishedAt } = this.props.news;
 
     return (
-      <div className='news'>
+      <li className='list-group-item'>
         { url ?
           <a href={url} title={title} target='_blank' rel='noopener noreferrer'>
             <h4>{title}</h4>
           </a> :
           <h4>{title}</h4>
         }
-        <p>
-          <span>{author}</span>
-          <span>{publishedAt}</span>
-        </p>
+        <p>{author}</p>
+        <p>{publishedAt}</p>
         <p>{description}</p>
-      </div>
+      </li>
     );
   }
 }

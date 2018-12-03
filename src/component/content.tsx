@@ -27,12 +27,12 @@ class Content extends React.Component<IProps, {}> {
   render() {
     const { newsList } = this.props;
     return (
-      <div className="content">
+      <ul className='list-group'>
         { newsList.length !== 0 ?
           newsList.map(value => <News news={value} key={value.title} />) :
           <p>Loading...</p>
         }
-      </div>
+      </ul>
     );
   }
 }

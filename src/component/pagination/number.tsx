@@ -7,9 +7,10 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import { SET_CURRENT_PAGE } from '../../action';
-import { IReducerQueryToNewsAction } from '../../model/reducer';
+import { IReducerQueryToNewsAction, IState } from '../../model/reducer';
 
 interface IProps {
+  currentPage?: number;
   isDisabled: boolean;
   pageGoto: number;
   onSetPageAndFetchNews: Function;
@@ -17,16 +18,19 @@ interface IProps {
 
 class PaginationNumber extends React.Component<IProps, {}> {
   render() {
-    const { isDisabled, pageGoto, onSetPageAndFetchNews } = this.props;
+    const { currentPage, isDisabled, pageGoto, onSetPageAndFetchNews } = this.props;
 
     if (!isDisabled) {
       return (
-        <span
-          style={{ margin: '8px', cursor: 'pointer' }}
-          onClick={() => onSetPageAndFetchNews(pageGoto)}
-        >
-          {pageGoto}
-        </span>
+        <li className={`page-item ${isDisabled ? 'disabled' : null} ${pageGoto === currentPage ? 'active' : null}`}>
+          <a
+            className='page-link'
+            href='#'
+            onClick={() => onSetPageAndFetchNews(pageGoto)}
+          >
+            {pageGoto}
+          </a>
+        </li>
       )
     }
     
@@ -34,8 +38,12 @@ class PaginationNumber extends React.Component<IProps, {}> {
   }
 }
 
+const mapStateToProps = (state: IState) => ({
+  currentPage: state.queryToNews.page,
+});
+
 const mapDispatchToProps = (dispatch: Dispatch<IReducerQueryToNewsAction>) => ({
   onSetPageAndFetchNews: (page: number) => dispatch({ type: SET_CURRENT_PAGE, value: page }),
 });
 
-export default connect(null, mapDispatchToProps)(PaginationNumber);
+export default connect(mapStateToProps, mapDispatchToProps)(PaginationNumber);

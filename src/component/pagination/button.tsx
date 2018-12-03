@@ -21,12 +21,15 @@ class PaginationButton extends React.Component<IProps, {}> {
     const { isDisabled, pageGoto, text, onSetPageAndFetchNews } = this.props;
 
     return (
-      <button
-        onClick={() => onSetPageAndFetchNews(pageGoto)}
-        disabled={isDisabled}
-      >
-        {text}
-      </button>
+      <li className={isDisabled ? 'page-item disabled' : 'page-item'}>
+        <a
+          className='page-link'
+          href='#'
+          onClick={() => onSetPageAndFetchNews(pageGoto)}
+        >
+          {text}
+        </a>
+      </li>
     )
   }
 }

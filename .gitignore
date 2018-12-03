@@ -1,4 +1,5 @@
 # This project
+dist/*.css
 dist/*.js
 dist/*.map
 package-lock.json

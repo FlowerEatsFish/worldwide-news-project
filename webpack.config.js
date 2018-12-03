@@ -1,3 +1,6 @@
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   mode: "development",
   entry: "./src/index.tsx",
@@ -21,5 +24,13 @@ module.exports = {
         loader: "source-map-loader"
       }
     ]
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.join(__dirname, 'node_modules/bootstrap/dist/css/bootstrap.min.css'),
+        to: path.join(__dirname, 'dist/bootstrap.min.css')
+      }
+    ])
+  ]
 };
