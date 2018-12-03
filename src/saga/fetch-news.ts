@@ -2,6 +2,9 @@
  * One of the Redux middleware for fetching news using News API.
  */
 
+// An error on next line:
+// TS7016: Could not find a declaration file for module 'newsapi',
+// But the author never writes the index.d.ts file.
 import * as NewsAPI from 'newsapi';
 import { put, select, takeEvery } from 'redux-saga/effects';
 
