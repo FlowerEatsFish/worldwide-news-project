@@ -8,7 +8,7 @@
 import * as NewsAPI from 'newsapi';
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL } from '../action';
+import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL, SET_MAX_NEWS_NUMBER, SET_CURRENT_PAGE } from '../action';
 import { INewsApi, IRequestToEverything, IResponseBeingOK, IResponseBeingError } from '../model/news-api';
 import { IState } from '../model/reducer';
 
@@ -25,15 +25,18 @@ function* fetchNewsAsync() {
   if (response.status === 'ok') {
     // Return news list to reducer when status is OK.
     yield put({ type: FETCH_NEWS_SUCCESS, value: response.articles });
+    yield put({ type: SET_MAX_NEWS_NUMBER, value: response.totalResults });
   } else {
     // Return "null" to reducer when status is ERROR.
     console.error(response.message);
     yield put({ type: FETCH_NEWS_FAIL, value: [] });
+    yield put({ type: SET_MAX_NEWS_NUMBER, value: 0 });
   }
 };
 
 function* fetchNews() {
   yield takeEvery(FETCH_NEWS_REQUEST, fetchNewsAsync);
+  yield takeEvery(SET_CURRENT_PAGE, fetchNewsAsync);
 };
 
 export default fetchNews;

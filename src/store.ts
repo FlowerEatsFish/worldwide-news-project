@@ -16,3 +16,5 @@ export const storeQueryToNews: IRequestToEverything = {
 }
 
 export const storeNewsList: IArticle[] = [];
+
+export const storeMaxNewsNumber = 0;

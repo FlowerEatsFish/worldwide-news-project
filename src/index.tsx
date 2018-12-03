@@ -9,6 +9,7 @@ import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import Content from './component/content';
+import Pagination from './component/pagination';
 
 import rootReducer from './reducer/index';
 import rootSaga from './saga/index';
@@ -21,7 +22,9 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
     <div className='master'>
+      <Pagination />
       <Content />
+      <Pagination />
     </div>
   </Provider>,
   document.getElementById('app')
