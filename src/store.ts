@@ -2,7 +2,7 @@
  * To save all states of Store as initial.
  */
 
-import { IRequestToEverything, IArticle } from "./model/news-api";
+import { IRequestToEverything, IArticle } from "type/newsapi";
 
 export const storeNwsApiKey: string = 'c3a9c8af18cd4611b5d67602b170634b';
 

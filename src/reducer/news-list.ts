@@ -2,8 +2,9 @@
  * To mutate the value of news list via Actions.
  */
 
+import { IArticle } from 'type/newsapi';
+
 import { FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL } from '../action/index';
-import { IArticle } from '../model/news-api';
 import { IReducerNewsAction } from '../model/reducer';
 import { storeNewsList } from '../store';
 

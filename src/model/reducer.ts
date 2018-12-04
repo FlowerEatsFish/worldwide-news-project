@@ -1,4 +1,4 @@
-import { IArticle, IRequestToEverything } from "./news-api";
+import { IArticle, IRequestToEverything } from "type/newsapi";
 
 type TypeReducerNewsAction = 'FETCH_NEWS_REQUEST'|'FETCH_NEWS_SUCCESS'|'FETCH_NEWS_FAIL';
 

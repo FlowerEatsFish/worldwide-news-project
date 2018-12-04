@@ -2,14 +2,12 @@
  * One of the Redux middleware for fetching news using News API.
  */
 
-// An error on next line:
-// TS7016: Could not find a declaration file for module 'newsapi',
-// But the author never writes the index.d.ts file.
 import * as NewsAPI from 'newsapi';
 import { put, select, takeEvery } from 'redux-saga/effects';
 
+import { IRequestToEverything, IResponseBeingOK, IResponseBeingError } from 'type/newsapi';
+
 import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL, SET_MAX_NEWS_NUMBER, SET_CURRENT_PAGE } from '../action';
-import { INewsApi, IRequestToEverything, IResponseBeingOK, IResponseBeingError } from '../model/news-api';
 import { IState } from '../model/reducer';
 
 function* fetchNewsAsync() {
@@ -18,7 +16,7 @@ function* fetchNewsAsync() {
   const newsApiKey: string = yield select((state: IState) => state.newsApiKey);
 
   // It is ready to fetch news using News API.
-  const newsApi: INewsApi = new NewsAPI(newsApiKey);
+  const newsApi = new NewsAPI(newsApiKey);
 
   const response: IResponseBeingError|IResponseBeingOK = yield newsApi.v2.everything(queryToNews);
 

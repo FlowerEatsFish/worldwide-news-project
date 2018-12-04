@@ -4,7 +4,7 @@
 
 import * as React from 'react';
 
-import { IArticle } from '../../model/news-api';
+import { IArticle } from 'type/newsapi';
 
 interface IProps {
   news: IArticle;

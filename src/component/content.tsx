@@ -6,10 +6,11 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
+import { IArticle } from 'type/newsapi';
+
 import News from './content/news';
 
 import { FETCH_NEWS_REQUEST } from '../action';
-import { IArticle } from '../model/news-api';
 import { IState, IReducerNewsAction } from '../model/reducer';
 
 interface IProps {
