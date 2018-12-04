@@ -13,7 +13,7 @@ export const storeQueryToNews: IRequestToEverything = {
   language: 'en',
   sortBy: 'publishedAt',
   sources: 'the-new-york-times',
-  pageSize: 30,
+  pageSize: 12,
   page: 1,
 }
 
