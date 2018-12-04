@@ -3,17 +3,20 @@
  */
 
 import * as React from 'react';
+import MediaQuery from 'react-responsive';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import { IArticle } from 'type/newsapi';
 
-import News from './content/news';
+import NewsOnList from './content/news-on-list';
+import NewsOnCard from './content/news-on-card';
 
 import { FETCH_NEWS_REQUEST } from '../action';
 import { IState, IReducerNewsAction } from '../model/reducer';
 
 interface IProps {
+  mobileWidth: number;
   newsList: IArticle[];
   onFetchNewsOnInitial: Function;
 }
@@ -26,20 +29,41 @@ class Content extends React.Component<IProps, {}> {
   }
 
   render() {
-    const { newsList } = this.props;
+    const { newsList, mobileWidth } = this.props;
     return (
-      <ul className='list-group'>
-        { newsList.length !== 0 ?
-          newsList.map(value => <News news={value} key={value.title} />) :
-          <p>Loading...</p>
-        }
-      </ul>
+      <React.Fragment>
+        {/* Render it when the width is greater than the mobile mode */}
+        <MediaQuery minWidth={mobileWidth + 1}>
+          <div>
+            { newsList.length !== 0 ?
+              newsList.map(value => (
+                <NewsOnCard news={value} key={value.title} />
+              )) :
+              <p>Loading...</p>
+            }
+          </div>
+        </MediaQuery>
+
+        {/* Render it when the width is less than the mobile mode */}
+        <MediaQuery maxWidth={mobileWidth}>
+          <ul className='list-group'>
+            { newsList.length !== 0 ?
+              newsList.map(value => (
+                <NewsOnList news={value} key={value.title} />
+              )) :
+              <p>Loading...</p>
+            }
+          </ul>
+        </MediaQuery>
+      </React.Fragment>
+      
     );
   }
 }
 
 const mapStateToProps = (state: IState) => ({
   newsList: state.newsList,
+  mobileWidth: state.widthOnPixel.mobile,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<IReducerNewsAction>) => ({

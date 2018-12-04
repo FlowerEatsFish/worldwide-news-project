@@ -6,11 +6,19 @@ type TypeReducerMaxNewsNumberAction = 'SET_MAX_NEWS_NUMBER';
 
 type TypeReducerQueryToNews = 'SET_CURRENT_PAGE';
 
+export interface IWidthOnPixel {
+  iphone: number;
+  mobile: number;
+  laptop: number;
+  landscape: number;
+}
+
 export interface IState {
   maxNewsNumber: number;
   newsList: IArticle[];
   newsApiKey: string;
   queryToNews: IRequestToEverything;
+  widthOnPixel: IWidthOnPixel;
 }
 
 export interface IReducerNewsAction {
