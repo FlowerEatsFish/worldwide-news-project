@@ -22,7 +22,7 @@ class PaginationNumber extends React.Component<IProps, {}> {
 
     if (!isDisabled) {
       return (
-        <li className={`page-item ${isDisabled ? 'disabled' : null} ${pageGoto === currentPage ? 'active' : null}`}>
+        <li className={`page-item${isDisabled ? ' disabled' : ''}${pageGoto === currentPage ? ' active' : ''}`}>
           <a
             className='page-link'
             href='#'

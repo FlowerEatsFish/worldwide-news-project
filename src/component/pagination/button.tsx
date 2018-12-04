@@ -21,7 +21,7 @@ class PaginationButton extends React.Component<IProps, {}> {
     const { isDisabled, pageGoto, text, onSetPageAndFetchNews } = this.props;
 
     return (
-      <li className={isDisabled ? 'page-item disabled' : 'page-item'}>
+      <li className={`page-item${isDisabled ? ' disabled' : ''}`}>
         <a
           className='page-link'
           href='#'
