@@ -23,7 +23,7 @@ class Pagination extends React.Component<IProps, {}> {
     const { currentPage, iphoneWidth, mobileWidth, maxPage } = this.props;
 
     return (
-      <ul className='pagination' style={{ marginTop: '1rem' }}>
+      <ul className='pagination justify-content-center' style={{ marginTop: '1rem' }}>
         <PaginationButton pageGoto={currentPage - 1} isDisabled={currentPage - 1 <= 0} text={'Prev'} />
 
         {/* Render it when the width is greater than the iphone mode */}
