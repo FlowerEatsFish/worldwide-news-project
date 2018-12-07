@@ -4,9 +4,9 @@
 
 import { IArticle } from 'type/newsapi';
 
-import { FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL } from '../action/index';
-import { IReducerNewsAction } from '../model/reducer';
-import { storeNewsList } from '../store';
+import { FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL } from 'action';
+import { IReducerNewsAction } from 'model/reducer';
+import { storeNewsList } from 'store';
 
 const newsList = (state = storeNewsList, action: IReducerNewsAction): IArticle[] => {
   switch (action.type) {

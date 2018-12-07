@@ -2,9 +2,9 @@
  * To mutate the value of max news number via Actions.
  */
 
-import { SET_MAX_NEWS_NUMBER } from '../action/index';
-import { IReducerMaxNewsNumberAction } from '../model/reducer';
-import { storeMaxNewsNumber } from '../store';
+import { SET_MAX_NEWS_NUMBER } from 'action';
+import { IReducerMaxNewsNumberAction } from 'model/reducer';
+import { storeMaxNewsNumber } from 'store';
 
 const maxNewsNumber = (state = storeMaxNewsNumber, action: IReducerMaxNewsNumberAction): number => {
   switch (action.type) {

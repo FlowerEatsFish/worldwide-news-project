@@ -6,8 +6,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { SET_CURRENT_PAGE } from '../../action';
-import { IReducerQueryToNewsAction } from '../../model/reducer';
+import { SET_CURRENT_PAGE } from 'action';
+import { IReducerQueryToNewsAction } from 'model/reducer';
 
 interface IProps {
   isDisabled: boolean;

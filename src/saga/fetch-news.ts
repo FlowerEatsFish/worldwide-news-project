@@ -7,8 +7,8 @@ import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { IRequestToEverything, IResponseBeingOK, IResponseBeingError } from 'type/newsapi';
 
-import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL, SET_MAX_NEWS_NUMBER, SET_CURRENT_PAGE } from '../action';
-import { IState } from '../model/reducer';
+import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAIL, SET_MAX_NEWS_NUMBER, SET_CURRENT_PAGE } from 'action';
+import { IState } from 'model/reducer';
 
 function* fetchNewsAsync() {
   // To get the queries and the API key from reducer.

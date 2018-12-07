@@ -4,7 +4,7 @@
 
 import { IRequestToEverything, IArticle } from "type/newsapi";
 
-import { IWidthOnPixel } from "./model/reducer";
+import { IWidthOnPixel } from 'model/reducer';
 
 export const storeNwsApiKey: string = 'c3a9c8af18cd4611b5d67602b170634b';
 

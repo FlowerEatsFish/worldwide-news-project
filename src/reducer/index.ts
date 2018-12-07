@@ -5,11 +5,11 @@
 import { Reducer } from 'react';
 import { combineReducers, AnyAction } from 'redux';
 
-import { IState, IWidthOnPixel } from '../model/reducer';
-import maxNewsNumber from './max-news-number';
-import newsList from './news-list';
-import queryToNews from './query-to-news';
-import { storeNwsApiKey, storeWidthOnPixel } from '../store';
+import { IState, IWidthOnPixel } from 'model/reducer';
+import maxNewsNumber from 'reducer/max-news-number';
+import newsList from 'reducer/news-list';
+import queryToNews from 'reducer/query-to-news';
+import { storeNwsApiKey, storeWidthOnPixel } from 'store';
 
 const newsApiKey = (state = storeNwsApiKey): string => state; 
 

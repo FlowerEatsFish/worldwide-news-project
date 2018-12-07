@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
 
 import { IArticle } from 'type/newsapi';
-import { IState } from '../../model/reducer';
+
+import { IState } from 'model/reducer';
 
 interface IProps {
   news: IArticle;

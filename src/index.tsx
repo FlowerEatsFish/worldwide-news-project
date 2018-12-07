@@ -8,11 +8,11 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import Content from './component/content';
-import Pagination from './component/pagination';
+import Content from 'component/content';
+import Pagination from 'component/pagination';
 
-import rootReducer from './reducer/index';
-import rootSaga from './saga/index';
+import rootReducer from 'reducer';
+import rootSaga from 'saga';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));

@@ -6,10 +6,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
 
-import PaginationButton from './pagination/button';
-import PaginationNumber from './pagination/number';
+import PaginationButton from 'component/pagination/button';
+import PaginationNumber from 'component/pagination/number';
 
-import { IState } from '../model/reducer';
+import { IState } from 'model/reducer';
 
 interface IProps {
   currentPage?: number;

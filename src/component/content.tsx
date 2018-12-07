@@ -9,11 +9,11 @@ import { Dispatch } from 'redux';
 
 import { IArticle } from 'type/newsapi';
 
-import NewsOnList from './content/news-on-list';
-import NewsOnCard from './content/news-on-card';
+import NewsOnCard from 'component/content/news-on-card';
+import NewsOnList from 'component/content/news-on-list';
 
-import { FETCH_NEWS_REQUEST } from '../action';
-import { IState, IReducerNewsAction } from '../model/reducer';
+import { FETCH_NEWS_REQUEST } from 'action';
+import { IState, IReducerNewsAction } from 'model/reducer';
 
 interface IProps {
   mobileWidth: number;

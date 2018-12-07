@@ -4,7 +4,7 @@
 
 import { fork } from 'redux-saga/effects';
 
-import fetchNews from './fetch-news';
+import fetchNews from 'saga/fetch-news';
 
 function* rootSaga() {
   yield [
